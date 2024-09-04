@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    {% load static %} <!-- Charge les fichiers statiques (static) -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    
+
+</head>
+
+<body>
+
+    <section id="header">
+        {% include 'nav.html' %}
+    </section>
+
+
+    <section id="main">
+        {% block content %}{% endblock %}
+    </section>
+        
+
+    <section id="footer">
+        {% include 'footer.html' %}
+    </section>
+    
+</body>
+</html>

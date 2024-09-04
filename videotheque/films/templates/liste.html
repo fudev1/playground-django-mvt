@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Liste des films{% endblock %}
+
+{% block content %}
+
+    <h1>Liste des films</h1>
+    <p>Et bim bam boum, c'est la liste des films dispo dans le <u>data.py</u></p>
+    
+
+    <ul>
+        {% for film in films %}
+            <li>
+                <h2>{{ film.titre }}</h2>
+                <img src="{{ film.url_affiche }}" alt="{{ film.titre }}">
+                <p>Date de sortie : {{ film.date_sortie }}</p>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+    
