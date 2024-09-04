@@ -12,25 +12,25 @@
 </nav> {% endcomment %}
 
 
-<header class="header">
+<header class="header bg-dark ">
     <div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
     
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="{% url 'index' %}" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <h1>VideoteK</h1>
+          <h1>Videote<span class="text-warning">K</span></h1>
         </a>
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="{% url 'liste' %}" class="nav-link px-2 link-secondary">Liste des films</a></li>
+        <li><a href="{% url 'liste' %}" class="nav-link px-2 link-warning">Liste des films</a></li>
         <li><a href="#" class="nav-link px-2">Pricing</a></li>
         <li><a href="#" class="nav-link px-2">FAQs</a></li>
         <li><a href="#" class="nav-link px-2">About</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
-        <button href="{% url 'admin:index' %}" type="button" class="btn btn-outline-primary me-2">Admin</button>
-        <button type="button" class="btn btn-primary">Sign-up</button>
+        <button href="{% url 'admin:index' %}" type="button" class="btn btn-outline-warning me-2">Admin</button>
+        <button type="button" class="btn btn-warning">Sign-up</button>
       </div>
     
     </div>
