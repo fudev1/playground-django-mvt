@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Supprimer un film{% endblock %}
+
+{% block content %}
+
+<h1>Supprimer un film</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form }}
+
+    <button type="submit">Supprimer</button>
+</form>
+
+{% endblock %}

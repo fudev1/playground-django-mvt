@@ -1,37 +1,22 @@
-{% comment %} <nav class="container">
-
-    <div class="logo">
-        <h1>Videote<span>K</span></h1>
-    </div>
-
-    <ul class="menu">
-        <li><a href="{% url 'index' %}">Accueil</a></li>
-        <li><a href="{% url 'liste' %}">Liste des films</a></li>
-        <li><a href="{% url 'admin:index' %}">Admin</a></li>
-    </ul>
-</nav> {% endcomment %}
-
-
-<header class="header bg-dark ">
-    <div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-    
-      <div class="col-md-3 mb-2 mb-md-0">
-        <a href="{% url 'index' %}" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <h1>Videote<span class="text-warning">K</span></h1>
-        </a>
-      </div>
-
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="{% url 'liste' %}" class="nav-link px-2 link-warning">Liste des films</a></li>
-        <li><a href="#" class="nav-link px-2">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2">About</a></li>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">VideoTeK</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'liste' %}">Link</a>
+        </li>
       </ul>
-
-      <div class="col-md-3 text-end">
-        <button href="{% url 'admin:index' %}" type="button" class="btn btn-outline-warning me-2">Admin</button>
-        <button type="button" class="btn btn-warning">Sign-up</button>
+      <div class="d-flex">
+        <a class="btn btn-primary" href="{% url 'admin:index' %}" role="button">Admin</a>
       </div>
-    
     </div>
-</header>
+  </div>
+</nav>
+

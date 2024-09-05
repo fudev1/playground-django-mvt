@@ -10,6 +10,13 @@ class Realisateur(models.Model):
 
     def __str__(self):
         return f'{self.prenom} {self.nom}'
+    
+class Acteur(models.Model):
+    nom = models.CharField(max_length=100)
+    prenom = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.prenom} {self.nom}'
 
 
 class Film(models.Model):
@@ -17,6 +24,11 @@ class Film(models.Model):
     resume = models.TextField()
     date_sortie = models.DateField()
     realisateur = models.ForeignKey(Realisateur, on_delete=models.RESTRICT)
+    acteurs = models.ManyToManyField(Acteur)
+    genre = models.CharField(max_length=100)
+    url_affiche = models.URLField()
+    rating = models.FloatField()
+
 
     def __str__(self):
         return f'ID: {self.id} - {self.titre} ({self.date_sortie} - {self.realisateur})'

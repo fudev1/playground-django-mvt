@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load form_extras %}
+
+{% block title %}Ajouter un realisateur{% endblock %}
+
+{% block content %}
+<h1>Ajouter un realisateur</h1>
+
+<form method="POST" class="needs-validation" novalidate>
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        {{ form.nom|add_class:"form-control" }}
+    </div>
+
+    <div class="mb-3">
+        <label for="id_prenom" class="form-label">Prénom</label>
+        {{ form.prenom|add_class:"form-control text-danger" }}
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+
+</form>
+{% endblock %}

@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'videotheque.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test',  
+        'NAME': 'howtodjango',  
         'USER': 'postgres',    
-        'PASSWORD': 'xdwzcc',  
+        'PASSWORD': 'postgres',  
         'HOST': 'localhost',   
         'PORT': '5432',        
     }

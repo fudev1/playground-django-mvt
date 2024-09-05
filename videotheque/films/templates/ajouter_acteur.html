@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Ajouter un acteur{% endblock %}
+
+{% block content %}
+<h1>Ajouter un acteur</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    {{ form }}
+
+    <button type="submit">Ajouter</button>
+
+</form>
+{% endblock %}
