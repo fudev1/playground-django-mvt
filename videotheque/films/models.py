@@ -21,13 +21,13 @@ class Acteur(models.Model):
 
 class Film(models.Model):
     titre = models.CharField(max_length=100)
-    resume = models.TextField()
-    date_sortie = models.DateField()
+    resume = models.TextField(null=True)
+    date_sortie = models.DateField(null=True)
     realisateur = models.ForeignKey(Realisateur, on_delete=models.RESTRICT)
     acteurs = models.ManyToManyField(Acteur)
-    genre = models.CharField(max_length=100)
-    url_affiche = models.URLField()
-    rating = models.FloatField()
+    genre = models.CharField(max_length=100, null=True)
+    url_affiche = models.URLField(null=True)
+    rating = models.FloatField(null=True)
 
 
     def __str__(self):

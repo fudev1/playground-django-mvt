@@ -4,7 +4,7 @@ from .models import Film, Realisateur, Acteur
 from django import forms
 
 
-class Creer_Film(ModelForm):
+class Ajouter_Film(ModelForm):
     class Meta:
         model = Film
         # fields = '__all__'

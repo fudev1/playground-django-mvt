@@ -1,7 +1,8 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .data import films
-from .forms import Supprimer_Film, Creer_Film, Ajouter_Acteur, Ajouter_Realisateur
+from .forms import Supprimer_Film, Ajouter_Film, Ajouter_Acteur, Ajouter_Realisateur
+from .models import Acteur, Film
 
 # Create your views here.
 
@@ -11,6 +12,9 @@ def index(request):
 def liste_film(request):
     # Avec l'import de data.py on peut récupérer le tableau et mapper les données
     return render(request, 'liste.html', {'films': films})
+
+def liste_acteur(request):
+    all_acteurs = Acteur.objects.all()
 
 
 def supprimer_film(request):
@@ -29,15 +33,15 @@ def supprimer_film(request):
     
     return HttpResponse('Formulaire envoyé mais pas valide')
 
-def creation_film(request):
+def ajouter_film(request):
     if request.method == "POST":
-        form = Creer_Film(request.POST)
+        form = Ajouter_Film(request.POST)
         if form.is_valid():
             form.save()
             return redirect('liste')
         
     else: 
-        form = Creer_Film()
+        form = Ajouter_Film()
         
     return render(request, 'ajouter_film.html', {'form': form})
 
@@ -69,11 +73,7 @@ def ajouter_acteur(request):
 
 
 
-# def detail_film(request, id):
-#     films = [
-#         {"id": 1, "titre": "Pulp Fiction", "auteur": "Quentin Tarantino", "contenu": "Un film de fiction sur le début de la vie de John Travolta"},
-#         {"id": 2, "titre": "La ligne verte", "auteur": "Frank Darabont", "contenu": "Un film de fiction sur le début de la vie de John Travolta"},
-#         {"id": 3, "titre": "Gladiator", "auteur": "Ridley Scott", "contenu": "Un film de fiction sur le début de la vie de John Travolta"},
-#     ]
-
-#     film = next(film for film in films if film['id'] == id)
+def detail_film(request, pk):
+    film = Film.objects.get(id=pk)
+    
+    return render(request, 'detail_film.html', {'film': film})
