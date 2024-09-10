@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load form_extras %}
 
 {% block title %}Ajouter un film{% endblock %}
 
@@ -37,29 +38,29 @@ style="background-image: url(https://themedox.com/demo/mykd/assets/img/bg/breadc
                 {% comment %} {{ form }} {% endcomment %}
                 
                 <span class="title">AJOUTER UN FILM</span>
+                
+                <div class="form-group">
+                    <label for="company-name">Nom du film</label>
+                    {{ form.titre|add_class:"form-control" }}
+                </div>
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="titre">Titre</label>
-                            <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre">
+                            <label for="titre">Réalisateur</label>
+                            {{ form.realisateur|add_class:"form-control" }}
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="titre">Titre</label>
-                            <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre">
+                            <label for="titre">Acteur</label>
+                            {{ form.acteurs|add_class:"form-control" }}
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="company-name">Company name (optional)</label>
-                    <input type="text" id="company-name">
-                </div>
 
-
-                <button type="submit">Ajouter</button>
+                <button class="btn" type="submit">Ajouter</button>
             </form>
             
         </div>

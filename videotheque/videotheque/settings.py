@@ -87,12 +87,23 @@ WSGI_APPLICATION = 'videotheque.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'howtodjango',  
+#         'USER': 'postgres',    
+#         'PASSWORD': 'postgres',  
+#         'HOST': 'localhost',   
+#         'PORT': '5432',        
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'howtodjango',  
+        'NAME': 'test',  
         'USER': 'postgres',    
-        'PASSWORD': 'postgres',  
+        'PASSWORD': 'xdwzcc',  
         'HOST': 'localhost',   
         'PORT': '5432',        
     }

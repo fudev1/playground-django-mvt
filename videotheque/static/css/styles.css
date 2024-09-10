@@ -55,6 +55,8 @@ a, button {
 }
 
 
+
+
 header {
     position: relative;
     z-index: 1;
@@ -544,6 +546,22 @@ header {
     border-radius: 2px;
 }
 
+
+.form-control {
+    width: 100%;
+    color: #fff;
+    padding: 0 20px;
+    border: 1px solid rgba(76, 76, 76, 0.2);
+    background-color: #182029;
+    border-radius: 2px; 
+}
+
+select.form-control {
+    height: 53px;
+}
+
+
+
 .form-control:focus {
     color: #fff;
     background-color: #182029;
@@ -556,6 +574,27 @@ button:focus, input:focus, input:focus, textarea, textarea:focus {
     outline: 0;
 }
 
+.btn {
+    user-select: none;
+    background-color: #45f882 !important;
+    border: medium none;
+    display: inline-flex;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    padding: 15px 34px;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transition: all 0.3s ease-out 0s;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 2px;
+}
+
+.btn:hover {
+    background-color: #182029 !important;
+    color: #fff;
+}
+
 .form_wrap .form-group label {
     display: block;
     margin-bottom: 5px;
@@ -564,4 +603,36 @@ button:focus, input:focus, input:focus, textarea, textarea:focus {
 
 .form_wrap .form-group {
     margin-bottom: 15px;
+}
+
+
+.form_wrap .btn {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.sign-wrap {
+    background-color: #121a23;
+    background-image: -webkit-linear-gradient(90deg, #0c0e12 0%, rgba(31, 41, 53, 0.36078) 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(76, 76, 76, 0.2);
+    padding: 30px 50px 40px;
+}
+
+.sign-wrap .title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.sign-link {
+    margin-top: 30px;
+}
+
+.sign-link a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
 }
