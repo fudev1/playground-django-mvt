@@ -56,6 +56,38 @@ a, button {
 }
 
 
+.pagination .page-numbers {
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none;
+    color: #adb0bc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #171d24;
+}
+
+.pagination .page-numbers:hover {
+    background-color: #45f882;
+    color: #0c0e12;
+}
+
+.pagination .current {
+    background-color: #45f882;
+    border-color: #45f882;
+    color: #201f2a;
+}
+
+.pagination .current:hover {
+    background-color: #45f882;
+    border-color: #45f882;
+    color: #201f2a;
+}
+
+
 
 
 header {
