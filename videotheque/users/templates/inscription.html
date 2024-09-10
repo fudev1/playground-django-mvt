@@ -10,7 +10,7 @@
 
 <!-- HEADER HERO -->
 <section class="breadcrumb-area breadcrumb__hide-img" data-background="{% static '/img/breadcrumb_bg01.jpg' %}" 
-style="background-image: url(https://themedox.com/demo/mykd/assets/img/bg/breadcrumb_bg01.jpg)">
+style="background-image: url({% static '/img/breadcrumb_bg01.jpg' %})">
     <div class="container">
         <div class="breadcrumb__wrapper">
             <div class="row">
@@ -30,6 +30,7 @@ style="background-image: url(https://themedox.com/demo/mykd/assets/img/bg/breadc
     </div>
 </section>
 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-xl-6 col-lg-8">
@@ -37,10 +38,35 @@ style="background-image: url(https://themedox.com/demo/mykd/assets/img/bg/breadc
                 <h2 class="title">Inscription</h2>
                 <p>Yolo inscription yolo</p>
 
+                <!-- <form method="POST">
+                    {% csrf_token %}
+                    {{form}}
+                
+                    <button type="submit"> S'inscrire</button>
+                </form> -->
+
 
                 <form method="POST" class="form_wrap">
+
+                    <!-- Gestion des erreurs dans le formulaire -->
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <ul>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+
                     {% csrf_token %}
-                
+
                     <div class="form-group">
                         <label for="username">Username</label>
                         {{ form.username|add_class:"form-control" }}
@@ -68,6 +94,7 @@ style="background-image: url(https://themedox.com/demo/mykd/assets/img/bg/breadc
                     </div>
                 
                 </form>
+
             </div>
         </div>
     </div>

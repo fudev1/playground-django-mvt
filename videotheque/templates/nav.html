@@ -38,9 +38,33 @@
           </li>
         </ul>
 
-        <div class="subnav">
-          <a class="nav-link nav-admin" aria-current="page" href="{% url 'connexion' %}">LOGIN</a>
-          <a class="nav-link nav-admin" aria-current="page" href="{% url 'admin:index' %}">ADMIN</a>
+        <div class="navbar-nav subnav">
+          {% if user.is_authenticated %}
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle nav-admin" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ user.username }}
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'deconnexion' %}">Se déconnecter</a></li>
+              </ul>
+            </div>
+          {% else %}
+
+            <div class="menu-action">
+              <ul class="list-wrap">
+                <li class="header-btn">
+                  <a class="nav-link nav-admin" aria-current="page" href="{% url 'connexion' %}">
+                    <i class="fa-solid fa-pen-to-square"></i> LOGIN
+                  </a>
+                </li>
+
+                <li class="header-btn">
+                  <a class="nav-link nav-admin" aria-current="page" href="{% url 'admin:index' %}">ADMIN</a>
+                </li>
+              </ul>
+            </div>
+
+          {% endif %}
         </div>
       </div>
     

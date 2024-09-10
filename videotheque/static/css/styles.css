@@ -92,6 +92,7 @@ header {
     border-radius: 10px;
     font-weight: bold;
     font-size: 15px;
+    text-transform: uppercase;
 }
 
 .navbar a.nav-admin:hover {
@@ -100,8 +101,11 @@ header {
 
 }
 
+.menu-action ul li {
+    display: inline-flex;
+}
+
 .subnav {
-    display: flex;
     gap: 15px;
 }
 

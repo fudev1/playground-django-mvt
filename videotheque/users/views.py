@@ -11,7 +11,7 @@ def inscription(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('liste')
+            return redirect('index')
         
     else: 
         form = InscriptionForm()
@@ -20,7 +20,8 @@ def inscription(request):
 
 def connexion(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request.POST)
+        # form = AuthenticationForm(request.POST)
+        form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
