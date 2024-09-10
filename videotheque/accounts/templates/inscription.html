@@ -68,26 +68,38 @@ style="background-image: url({% static '/img/breadcrumb_bg01.jpg' %})">
                     {% csrf_token %}
 
                     <div class="form-group">
-                        <label for="username">Username</label>
+                        <label for="username">Nom d'utilisateur</label>
                         {{ form.username|add_class:"form-control" }}
                     </div>
                 
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Adresse email</label>
                         {{ form.email|add_class:"form-control" }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Prénom</label>
+                        {{ form.first_name|add_class:"form-control" }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Nom</label>
+                        {{ form.last_name|add_class:"form-control" }}
                     </div>
                 
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Mot de passe</label>
                         {{ form.password1|add_class:"form-control" }}
                     </div>
                 
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Confirmer mot de passe</label>
                         {{ form.password2|add_class:"form-control" }}
                     </div>
+
+
                 
-                    <button class="btn" type="submit">Inscription</button>
+                    <button class="btn" type="submit">S'inscrire</button>
                 
                     <div class="sign-link">
                         <a href="{% url 'connexion' %}">Déjà inscrit ? Connexion</a>
