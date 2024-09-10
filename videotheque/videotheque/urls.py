@@ -25,5 +25,5 @@ urlpatterns = [
     path('films/', include('films.urls')),
     path('', views.index, name='index'),
     path('blog/', include('blog.urls')),
-    path('users/', include('users.urls')),
+    path('users/', include('accounts.urls')),
 ]
