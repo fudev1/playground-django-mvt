@@ -19,3 +19,5 @@ class Profil(models.Model):
 
     def __str__(self):
         return f'{self.utilisateur.username} - {self.numero_employe}'
+    
+    
