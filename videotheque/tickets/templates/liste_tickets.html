@@ -2,6 +2,7 @@
 {% load static %}
 {% load form_extras %}
 
+
 {% block title %}Ticketing{% endblock %}
 
 {% block content %}
@@ -36,12 +37,14 @@ style="background-image: url({% static '/img/breadcrumb_bg01.jpg' %})">
     <div class="container">
 
         <div class="row justify-content-center">
+
             <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Sujet du ticket</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Statut</th>
                     <th scope="col">Auteur</th>
                     <th scope="col">Date</th>
                     <th scope="col">Action</th>
@@ -54,6 +57,7 @@ style="background-image: url({% static '/img/breadcrumb_bg01.jpg' %})">
                         <th scope="row">{{ ticket.id }}</th>
                         <td>{{ ticket.titre }}</td>
                         <td>{{ ticket.description }}</td>
+                        <td>{{ ticket.get_status_display }}</td>
                         <td>{{ ticket.auteur }}</td>
                         <td>{{ ticket.date_creation }}</td>
 

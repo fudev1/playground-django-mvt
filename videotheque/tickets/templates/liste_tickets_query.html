@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Sujet du ticket</th>
+        <th scope="col">Description</th>
+        <th scope="col">Auteur</th>
+        <th scope="col">Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for ticket in tickets %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ ticket.titre }}</td>
+            <td>{{ ticket.description }}</td>
+            <td>{{ ticket.auteur }}</td>
+            <td>{{ ticket.date_creation }}</td>
+            <td>
+                <a href="{% url 'modifier_ticket' ticket.id %}" class="btn btn-warning">Modifier</a>
+                <a href="{% url 'supprimer_ticket' ticket.id %}" class="btn btn-danger">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
