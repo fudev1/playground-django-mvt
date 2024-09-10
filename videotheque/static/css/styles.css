@@ -13,6 +13,20 @@ body {
 }
 
 
+.btn-actions {
+    display: inline-flex;
+    gap: 10px; /* Pour espacer les boutons */
+    min-width: 350px; /* Assurer une largeur minimale */
+    justify-content: center; /* Centrer les boutons */
+    align-items: center; /* Aligner verticalement */
+}
+
+
+
+
+
+
+
 h1, h2, h3, h4, h5, h6 {
     color: #fff;
     margin-top: 0px;

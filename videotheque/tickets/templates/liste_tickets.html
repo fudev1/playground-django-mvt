@@ -37,38 +37,39 @@ style="background-image: url({% static '/img/breadcrumb_bg01.jpg' %})">
     <div class="container">
 
         <div class="row justify-content-center">
-
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Sujet du ticket</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Statut</th>
-                    <th scope="col">Auteur</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody class="table-group-divider">
-
-                    {% for ticket in tickets %}
+            <div class="table-tickets">
+                <table class="table table-dark table-striped">
+                    <thead>
                     <tr>
-                        <th scope="row">{{ ticket.id }}</th>
-                        <td>{{ ticket.titre }}</td>
-                        <td>{{ ticket.description }}</td>
-                        <td>{{ ticket.get_status_display }}</td>
-                        <td>{{ ticket.auteur }}</td>
-                        <td>{{ ticket.date_creation }}</td>
-
-                        <td>
-                            <a href="{% url 'modifier_ticket' ticket.id %}" class="btn btn-warning">Modifier</a>
-                            <a href="{% url 'supprimer_ticket' ticket.id %}" class="btn btn-danger">Supprimer</a>
-                        </td>
+                        <th scope="col">#</th>
+                        <th scope="col">Sujet du ticket</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Statut</th>
+                        <th scope="col">Auteur</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
                     </tr>
-                    {% endfor %}    
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody class="table-group-divider">
+
+                        {% for ticket in tickets %}
+                        <tr>
+                            <th scope="row">{{ ticket.id }}</th>
+                            <td>{{ ticket.titre }}</td>
+                            <td>{{ ticket.description }}</td>
+                            <td>{{ ticket.get_status_display }}</td>
+                            <td>{{ ticket.auteur }}</td>
+                            <td>{{ ticket.date_creation }}</td>
+
+                            <td class="btn-actions">
+                                <a href="{% url 'modifier_ticket' ticket.id %}" class="btn btn-sm"><i class="far fa-eye"></i></a>
+                                <a href="{% url 'supprimer_ticket' ticket.id %}" class="btn btn-sm"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        {% endfor %}    
+                    </tbody>
+                </table>
+            </div>
 
             <div class="pagination">
                 <ul class="list-wrap d-flex flex-wrap justify-content-center">
