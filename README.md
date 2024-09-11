@@ -21,4 +21,4 @@ Le but était de comprendre le MVT et le MVC sous forme de mini site avec plusie
 
 ![Image title](https://github.com/fudev1/playground-django-mvt/blob/master/sources/login.png?raw=true)
 
-![Image title](https://github.com/fudev1/playground-django-mvt/blob/master/sources/login.png?raw=true)
+![Image title](https://github.com/fudev1/playground-django-mvt/blob/master/sources/films.png?raw=true)
